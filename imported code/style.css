@@ -1,0 +1,49 @@
+ /* Properties for the body tag */
+ body {
+     /* Margin of 50px */
+    margin: 50px;
+    /* Font Family of Helvetica, sans-serif */
+    font-family: Helvetica, sans-serif;
+    /* Font Size of 150% for every text in the body */
+    font-size: 150%;
+}
+
+/* The DIV tags below are pretty self-explanatory.... I just wanted to use spooky yellow, black, and white colors */
+
+#movieBox{
+    color: white;
+}
+
+p{
+    color: orange;
+}
+
+#listMovies{
+    color: white;
+}
+
+h2{
+    color: black;
+}
+
+#legendTitle{
+    background-color: yellow;
+}
+
+#movieDirectory{
+    background-color: yellow;
+}
+
+#questionsFieldset{
+    background: black;
+    background-color: black;
+}
+
+#directoryFieldset{
+    background: black;
+    background-color: black;
+}
+
+#form1{
+    color: white;
+}
