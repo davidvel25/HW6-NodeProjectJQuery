@@ -9,32 +9,34 @@
  </head>
 
  <body>
-     <div data-role="page">
+    <div data-role="page" id="page1">
 
         <div data-role="header">
-           <h1>Welcome to page 1!!!</h1>
+            <h1>Welcome to page 1!!!</h1>
+            <a href="#page1" data-icon="home">Home</a>
         </div>
 
         <div data-role="content">
            <p>Welcome to my blog and you are reading how to write your first jQuery mobile app. (page 1 is nice)</p>
-           <p>Click to go to page 2 <a href="apage2">END GAME</a></p>
+           <p>Click to go to page 2: <a href="#page2">Next Page (p2)</a></p>
         </div>
 
         <div data-role="footer">
            <h1>end of page 1</h1>
         </div>
 
-     </div>
+    </div>
 
-     <div data-role="page2">
+    <div data-role="page" id="page2">
 
         <div data-role="header">
            <h1>Welcome to page 2!!!</h1>
+           <a href="#page1" data-icon="home">Home</a>
         </div>
 
         <div data-role="content">
            <p>page 2 is nice</p>
-           <p>Click to go to page 3 <a href="apage3">END GAME</a></p>
+           <p>Click to go to page 3: <a href="#page3">Next Page (p3)</a></p>
         </div>
 
         <div data-role="footer">
@@ -43,15 +45,16 @@
 
      </div>
 
-     <div data-role="page">
+    <div data-role="page" id="page3">
 
         <div data-role="header">
            <h1>Welcome to page 3!!!</h1>
+           <a href="#page1" data-icon="home">Home</a>
         </div>
 
         <div data-role="content">
            <p>Page 3 is nice</p>
-           <p>CLick to go to BACK to page 1<a href="apage1">END GAME</a></p>
+           <p>CLick to go to BACK to page 1: <a href="#page1">Next Page (Recycle to p1)</a></p>
         </div>
 
         <div data-role="footer">

@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Open index2.html",
+            "file": "c:\\Users\\david\\OneDrive - Lake Washington School District\\BC\\PROG 209\\HW6-NodeProjectJQueryv1\\HW6-NodeProjectJQuery\\new code\\index2.html"
+        }
+    ]
+}
