@@ -9,58 +9,45 @@
  </head>
 
  <body>
-    <div data-role="page" id="page1">
+     <!-- Start of the Page -->
+    <div data-role="page" id="home">
 
-        <div data-role="header">
-            <h1>Welcome to page 1!!!</h1>
+        <!-- Page Header -->
+        <div data-role="header" data-theme='a'>
+            <h1>My Library</h1>
             <a href="#page1" data-icon="home">Home</a>
+            <div data-role="navbar" data-theme='b'>
+                <ul>
+                    <li><a href="#addBook">Add Book</a></li>
+                    <li><a href="#listAll">Display Library</a></li>
+                    <li><a href="#removeBook">Remove Book</a></li>                    
+            </div> <!-- navbar -->
         </div>
 
-        <div data-role="content">
-           <p>Welcome to my blog and you are reading how to write your first jQuery mobile app. (page 1 is nice)</p>
-           <p>Click to go to page 2: <a href="#page2">Next Page (p2)</a></p>
+        <!-- Page Content -->
+        <div data-role="content" data-theme='b'>
+            <div class="newFont">
+                <h2>The Library Closet</h2>
+            </div>
         </div>
 
-        <div data-role="footer">
-           <h1>end of page 1</h1>
-        </div>
-
+        <div data-role="footer" data-theme='b'>
+            <h1>Copyright 2022 by David Velcsov</h1>
+         </div>
     </div>
 
-    <div data-role="page" id="page2">
-
-        <div data-role="header">
-           <h1>Welcome to page 2!!!</h1>
-           <a href="#page1" data-icon="home">Home</a>
-        </div>
-
-        <div data-role="content">
-           <p>page 2 is nice</p>
-           <p>Click to go to page 3: <a href="#page3">Next Page (p3)</a></p>
-        </div>
-
-        <div data-role="footer">
-           <h1>end of page 2</h1>
-        </div>
-
-     </div>
-
-    <div data-role="page" id="page3">
-
-        <div data-role="header">
-           <h1>Welcome to page 3!!!</h1>
-           <a href="#page1" data-icon="home">Home</a>
-        </div>
-
-        <div data-role="content">
-           <p>Page 3 is nice</p>
-           <p>CLick to go to BACK to page 1: <a href="#page1">Next Page (Recycle to p1)</a></p>
-        </div>
-
-        <div data-role="footer">
-           <h1>end of page 3</h1>
-        </div>
-
-     </div>
+    <div data-role="page" id="Load">
+        <!-- Page Header -->
+        <div data-role="header" data-theme='a'></div>
+            <h1>Add a Book</h1>
+            <div data-role="navbar" data-theme='b'></div>
+            <ul>
+                <li><a href="#home">Home Page</a></li>
+                <li><a href="#addBook">Home Page</a></li>
+                <li><a href="listAll">Display Library</a></li>
+                <li><a href="#removeBook">Remove Book</a></li>
+            </div>  
+        </div>  
+    </div>
  </body>
  </html> 
