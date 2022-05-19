@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/>
   <script src="http://code.jquery.com/jquery-1.8.2.min.js"> </script>
   <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style2.css">
  </head>
 
  <body>
@@ -14,13 +15,14 @@
 
         <!-- Page Header -->
         <div data-role="header" data-theme='a'>
-            <h1>My Library</h1>
-            <a href="#page1" data-icon="home">Home</a>
+            <h1>My Library of Novels</h1>
+            <a href="#home" data-icon="home">Home</a>
             <div data-role="navbar" data-theme='b'>
                 <ul>
                     <li><a href="#addBook">Add Book</a></li>
                     <li><a href="#listAll">Display Library</a></li>
-                    <li><a href="#removeBook">Remove Book</a></li>                    
+                    <li><a href="#removeBook">Remove Book</a></li>
+                </ul>                   
             </div> <!-- navbar -->
         </div>
 
@@ -36,18 +38,95 @@
          </div>
     </div>
 
-    <div data-role="page" id="Load">
+    <div data-role="page" id="load">
         <!-- Page Header -->
         <div data-role="header" data-theme='a'></div>
             <h1>Add a Book</h1>
             <div data-role="navbar" data-theme='b'></div>
-            <ul>
-                <li><a href="#home">Home Page</a></li>
-                <li><a href="#addBook">Home Page</a></li>
-                <li><a href="listAll">Display Library</a></li>
-                <li><a href="#removeBook">Remove Book</a></li>
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#addBook">Add Book</a></li>
+                    <li><a href="#listAll">Display Library</a></li>
+                    <li><a href="#removeBook">Remove Book</a></li>
+                </ul>
             </div>  
         </div>  
+    <!-- </div>  -->
+
+        <div data-role="content" data-theme='c'>
+            <h2>Insert a new Book</h2>
+            Enter Book Title <br><br>
+            <input type="text" value="bookTitle" id="title">
+            Enter Book Publishing Year <br><br>
+            <input type="text" value="bookYear" id="year">
+            Enter the Author's Last Name <br><br>
+            <input type="text" value="bookLastName id="lastName">
+            Enter the Author's First name <br><br>
+            <input type="text" value="bookFirstName" id="firstName">
+            Enter the Book's ISBN number using https://isbnsearch.org/ <br><br>
+            <input type="text" value="bookISBN" id="isbn">
+
+                <div class="selectDropdown">
+                    <label for="select-genre">Select the Book's Genre using https://books.google.com/</label>
+                    <select name="select-genre" id="select-genre">
+                        <option value="adventure">Adventure</option>
+                        <option value="crimeThriller">Crime/Thriller</option>
+                        <option value="childrens">Childrens</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="history">History</option>
+                        <option value="historicalFiction">Historical Fiction</option>
+                        <option value="humour">Humour</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="nonfiction">Non-Fiction</option>
+                        <option value="productivity">Productivity/Self-Improvement</option>
+                        <option value="realisticFiction">Realistic Fiction</option>
+                        <option value="romance">Romance</option>
+                        <option value="scienceFiction">Science Fiction</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            <input type="button" value="Click to add Book to the library catalog" id="addBook" data-inline="true"></>
+            <input type="button" value="Clear Library Data" id="clearLibrary" data-inline="true"></>
+        </div>
+
+        <div data-role="footer" data-theme='b'>
+            <h1>Copyright 2022 by David Velcsov</h1>
+        </div>
     </div>
+    <!-- End of page 1 -->
+
+    <div data-role="page" id="listAll">
+        <div data-role="header" data-theme='a'>
+            <h1>My Library of Novels</h1>
+            <div data-role="navbar" data-theme='b'>
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#addBook">Add Book</a></li>
+                    <li><a href="#listAll">Display Library</a></li>
+                    <li><a href="#removeBook">Remove Book</a></li>
+                </ul>
+            </div>
+            <!-- navbar -->
+        </div>
+
+        <!-- Content -->
+        <div data-role="content" data-theme='e'>
+            <p>"Pick a Book, any Book"</p>
+            <div id="divBookList">
+                <ul id="ulBookList"></ul>    
+            </div>
+            <input type="button" value="Sort by Genre" id="sortGenre" data-inline="true" />
+            <input type="button" value="Sort by Title" id="sortTitle" data-inline="true" />
+        </div>
+
+        <div data-role="footer" data-theme='b'>
+            <h1>Copyright 2022 by David Velcsov</h1>
+        </div>
+    </div>    
+
+    <!-- Attach the "main2.js" file to this index.html page -->
+    <script src="main2.js"></script>
+   
  </body>
  </html> 
