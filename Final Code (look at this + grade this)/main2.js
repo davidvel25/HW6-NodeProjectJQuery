@@ -44,9 +44,15 @@ document.addEventListener("DOMContentLoaded", function(){
         let tempulList = document.getElementById("ulBookList");
         let fullList = "";
         for (let element of libraryArray) {
-            fullList += `   <li>title: ${element.title}</li>
+            fullList += `   
+                            <li><strong><u>Book #${element.libraryCount}</u></strong>:</li>
+                            <li>title: ${element.title}</li>
                             <li>year: ${element.year}</li>
-
+                            <li>last name: ${element.lastName}</li>
+                            <li>first name: ${element.firstName}</li>
+                            <li>isbn: ${element.ISBN}</li>
+                            <li>genre: ${element.genre}</li>
+                            <br>
                         `;
         }
         tempulList.innerHTML = fullList;
