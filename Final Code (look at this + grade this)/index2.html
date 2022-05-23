@@ -100,13 +100,13 @@
                 Enter the Author's First name
                 <input type="text" placeholder="Enter the first name of the Author" id="firstName">
                 <!-- Input Field for the user to type the Book's ISBN Number with the help of an ISBN lookup  -->
-                Enter the Book's ISBN number using <a href="https://isbnsearch.org/">ISBN search</a>
+                Enter the Book's ISBN number using <a href="https://isbnsearch.org/" target="_blank">ISBN search</a>
                 <input type="text" placeholder="Enter the ISBN Number of your Book" id="ISBN">
 
                     <!-- A dropdown for the user to select the Book's Genre -->
                     <div class="selectDropdown">
                         <!-- Prompts the User to Lookup the Genre of the Book using Google Books as a resource -->
-                        <label for="select-genre">Select the Book's Genre using <a href="https://books.google.com/">Google Books</a></label>
+                        <label for="select-genre">Select the Book's Genre using <a href="https://books.google.com/" target="_blank">Google Books</a></label>
                         <select name="select-genre" id="select-genre">
                             <!-- A non-clickable value in the dropdown field used as a temporary placeholder-->
                             <option disabled selected value> -- select a genre -- </option>
@@ -129,7 +129,7 @@
                     </div>
             </div>
             <!-- A clickable button located below the select dropdown which allows the user to append the book to the Library Array -->
-            <input type="button" value="Click to add Book to the library catalog" id="addBook" data-inline="true">
+            <input type="button" value="Click to add Book to the library catalog" id="addtoList" data-inline="true">
             <!-- A clickable button located below the select dropdown which allows the user to clear all the data of the Book Objects from the Library Array -->
             <input type="button" value="Clear Library Data" id="clearLibrary" data-inline="true">
         </div>
@@ -176,7 +176,9 @@
                 <p>Allows the user to view the entire Library of Books, and also be sorted by Genre or Title. This site will use "ul" and "li" tags in order to display all the books in the <strong>Library Array</strong> most effectively from the top to the bottom of the page (will use the Library array).</p>
                 <!-- Creates an empty list which will eventually store all the Book objects from the Library Array -->
                 <div id="divBookList">
-                    <ul id="ulBookList"></ul>    
+                    <ul id="ulBookList">
+                        
+                    </ul>    
                 </div>
             </div>
             <!-- A clickable button located below the list of libraryArray books which allows the user to sort the array by Genre -->

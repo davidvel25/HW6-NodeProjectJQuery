@@ -15,17 +15,19 @@ libraryArray.push(new Book("book1", 2012, "floop", "droop", 1925320, 'adventure'
 let currentGenre = "noneSelected";
 
 document.addEventListener("DOMContentLoaded", function(){
-    // createList();
 
-    document.getElementById("addBook").addEventListener("click", function(){
+    document.getElementById("addtoList").addEventListener("click", function(){
+        let tempGenre = document.getElementById("select-genre");
+        let tempGenre2 = tempGenre.options[tempGenre.selectedIndex].text;
         libraryArray.push(new Book  (   document.getElementById("title").value,
                                         document.getElementById("year").value,
                                         document.getElementById("lastName").value,
                                         document.getElementById("firstName").value,
                                         document.getElementById("ISBN").value,
-                                        document.getElementById("select-genre").selectedIndex
+                                        tempGenre2
                                     ));
-    document.location.href = "index.html#listAll";
+    console.log("add Book");
+    console.log(libraryArray);
     });
 
     document.getElementById("clearLibrary").addEventListener("click", function(){
@@ -34,23 +36,31 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("lastName").value = "";
         document.getElementById("firstName").value = "";
         document.getElementById("ISBN").value = "";
-        // document.getElementById("genre").value = "";    
+        document.getElementById("genre").selectedIndex = "";    
     });
 
-    $(document).bind("change", "select-genre", function(event, ui){
-        selectedGenre = $('select-genre').val();
+    document.getElementById("listAll").addEventListener("click", function(){
+        let tempulList = document.getElementById("ulBookList");
+        let fullList = "";
+        for (let element of libraryArray) {
+            fullList += `   <li>title: ${element.title}</li>
+                            <li>year: ${element.year}</li>
+
+                        `;
+        }
+        tempulList.innerHTML = fullList;
     });
 
-    document.getElementById("select-genre").addEventListener("click", function(){
-        movieArray.sort(dynamicSort("title"));
-        createList();
-        document.location.href = "index.html#listAll";
+    document.getElementById("sortTitle").addEventListener("click", function(){
+        console.log("sort Title");
+        libraryArray.sort(dynamicSort("title"));
+        document.location.href = "index2.html#listAll";
     });
 
     document.getElementById("sortGenre").addEventListener("click", function(){
-        movieArray.sort(dynamicSort("genre"));
-        createList();
-        document.location.href = "index.html#listAll";
+        console.log("sort Genre");
+        libraryArray.sort(dynamicSort("select-genre"));
+        document.location.href = "index2.html#listAll";
     });
 
 });
