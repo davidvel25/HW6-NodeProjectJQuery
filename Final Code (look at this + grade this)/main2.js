@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("genre").selectedIndex = "";    
     });
 
+    //new method of for-loop known as the for-of loop
     document.getElementById("listAll").addEventListener("click", function(){
         let tempulList = document.getElementById("ulBookList");
         let fullList = "";
@@ -50,6 +51,21 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         tempulList.innerHTML = fullList;
     });
+
+    //old method of for-loop
+    document.getElementById("listAll").addEventListener("click", function(){
+        let tempulList = document.getElementById("ulBookList");
+        let fullList = "";
+        for (let index = 0; index < libraryArray.length; index++) {
+            let element = libraryArray[index];
+            fullList += `   <li>title: ${element.title}</li>
+                            <li>year: ${element.year}</li>
+
+                        `;
+        }
+        tempulList.innerHTML = fullList;
+    });
+
 
     document.getElementById("sortTitle").addEventListener("click", function(){
         console.log("sort Title");
