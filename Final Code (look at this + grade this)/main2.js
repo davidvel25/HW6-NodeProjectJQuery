@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("lastName").value = "";
         document.getElementById("firstName").value = "";
         document.getElementById("ISBN").value = "";
-        document.getElementById("genre").selectedIndex = "";    
+        document.getElementById("dropdown").selectedIndex = 0;
     });
 
     //new method of for-loop known as the for-of loop
-    document.getElementById("listAll").addEventListener("click", function(){
+    document.addEventListener("listAll").addEventListener("click", function(){
         let tempulList = document.getElementById("ulBookList");
         let fullList = "";
         for (let element of libraryArray) {
