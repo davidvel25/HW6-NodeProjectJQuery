@@ -28,19 +28,24 @@ document.addEventListener("DOMContentLoaded", function(){
                                     ));
     console.log("add Book");
     console.log(libraryArray);
+    clearForm();
     });
 
-    document.getElementById("clearLibrary").addEventListener("click", function(){
+    function clearForm(){
         document.getElementById("title").value = "";
         document.getElementById("year").value = "";
         document.getElementById("lastName").value = "";
         document.getElementById("firstName").value = "";
         document.getElementById("ISBN").value = "";
-        document.getElementById("dropdown").selectedIndex = 0;
+        document.getElementById("select-genre").selectedIndex = null;
+    }
+
+    document.getElementById("clearLibrary").addEventListener("click", function(){
+        libraryArray = [];
     });
 
     //new method of for-loop known as the for-of loop
-    document.addEventListener("listAll").addEventListener("click", function(){
+    document.getElementById("listAll").addEventListener("click", function(){
         let tempulList = document.getElementById("ulBookList");
         let fullList = "";
         for (let element of libraryArray) {
