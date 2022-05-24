@@ -39,7 +39,12 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("lastName").value = "";
         document.getElementById("firstName").value = "";
         document.getElementById("ISBN").value = "";
-        document.getElementById("select-genre").value = 0;
+		//alert(document.getElementById("select-genre").value);
+		document.getElementById("select-genre").selectedIndex  = "0";
+		
+		//alert('hello 2');
+        // document.getElementById("select-genre").value = "0";
+		//window.document.select-genre.value="0";
     }
 
     document.getElementById("clearLibrary").addEventListener("click", function(){
