@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function(){
                                     ));
     console.log("add Book");
     console.log(libraryArray);
-    clearForm();
     updateList();
+    clearForm();
     });
 
     function clearForm(){
@@ -39,12 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("lastName").value = "";
         document.getElementById("firstName").value = "";
         document.getElementById("ISBN").value = "";
-		//alert(document.getElementById("select-genre").value);
-		document.getElementById("select-genre").selectedIndex  = "0";
-		
-		//alert('hello 2');
-        // document.getElementById("select-genre").value = "0";
-		//window.document.select-genre.value="0";
+        document.getElementById("select-genre").selectedIndex = 0;
     }
 
     document.getElementById("clearLibrary").addEventListener("click", function(){
