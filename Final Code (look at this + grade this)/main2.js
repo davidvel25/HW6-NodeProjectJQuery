@@ -17,6 +17,7 @@ let currentGenre = "noneSelected";
 document.addEventListener("DOMContentLoaded", function(){
 
     document.getElementById("addtoList").addEventListener("click", function(){
+        document.getElementById("ulBookList").innerHTML = libraryArray;
         let tempGenre = document.getElementById("select-genre");
         let tempGenre2 = tempGenre.options[tempGenre.selectedIndex].text;
         libraryArray.push(new Book  (   document.getElementById("title").value,
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log("add Book");
     console.log(libraryArray);
     clearForm();
+    updateList();
     });
 
     function clearForm(){
@@ -37,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("lastName").value = "";
         document.getElementById("firstName").value = "";
         document.getElementById("ISBN").value = "";
-        document.getElementById("select-genre").selectedIndex = null;
+        document.getElementById("select-genre").value = 0;
     }
 
     document.getElementById("clearLibrary").addEventListener("click", function(){
@@ -45,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     //new method of for-loop known as the for-of loop
-    document.getElementById("listAll").addEventListener("click", function(){
+    function updateList(){
         let tempulList = document.getElementById("ulBookList");
         let fullList = "";
         for (let element of libraryArray) {
@@ -61,8 +63,7 @@ document.addEventListener("DOMContentLoaded", function(){
                         `;
         }
         tempulList.innerHTML = fullList;
-    });
-
+    }
 
     document.getElementById("sortTitle").addEventListener("click", function(){
         console.log("sort Title");
