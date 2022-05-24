@@ -125,10 +125,38 @@
                             <option value="realisticFiction">Realistic Fiction</option>
                             <option value="romance">Romance</option>
                             <option value="scienceFiction">Science Fiction</option>
-                            <option value="new">New Temp</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
+
+                    Enter the Reviewer's (your) full name
+                    <input type="text" placeholder="Enter your full name" id="reviewer">
+ 
+                    <!-- Enter the date you finished reading the book
+                    <input type="text" placeholder="Enter a date using yyyy/mm/dd format" id="date"> -->
+
+                    <form action="/action_page.php">
+                        <label for="date">Enter the date you finished reading the book</label>
+                        <input type="date" id="date" name="date" placeholder="yyyy/mm/dd">
+                        <input type="submit">
+                    </form>                                          
+
+                    <div class="selectDropdown2">
+                        <!-- Prompts the User to Lookup the Genre of the Book using Google Books as a resource -->
+                        <!-- <label for="select-genre">Select the Book's Genre using <a href="https://books.google.com/" target="_blank">Google Books</a></label> -->
+                        Select a Rating for this Book                        
+                        <select id="rating">
+                            <!-- A non-clickable value in the dropdown field used as a temporary placeholder-->
+                            <option disabled selected value> -- select a rating -- </option>
+                            <option value="1">1 (worst)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (best)</option>
+                        </select>
+                    </div>
+
+
             </div>
             <!-- A clickable button located below the select dropdown which allows the user to append the book to the Library Array -->
             <input type="button" value="Click to add Book to the library catalog" id="addtoList" data-inline="true">
@@ -179,7 +207,7 @@
                 <!-- Creates an empty list which will eventually store all the Book objects from the Library Array -->
                 <div id="divBookList">
                     <ul id="ulBookList">
-                        <!-- empty ul list until someone adds a book to the array -->
+                        
                     </ul>    
                 </div>
             </div>
@@ -187,6 +215,8 @@
             <input type="button" value="Sort by Genre" id="sortGenre" data-inline="true" />
             <!-- A clickable button located below the list of libraryArray books which allows the user to sort the array by Genre -->
             <input type="button" value="Sort by Title" id="sortTitle" data-inline="true" />
+            <!-- A clickable button located below the list of libraryArray books which allows the user to sort the array by Rating -->
+            <input type="button" value="Sort by Rating" id="sortRating" data-inline="true" />            
         </div>
 
         <!-- The listAll's footer is positioned at the bottom of the page -->

@@ -1,6 +1,6 @@
 let libraryArray = [];
 
-let Book = function (bTitle, bYear, bLastName, bFirstName, bISBN, bGenre){
+let Book = function (bTitle, bYear, bLastName, bFirstName, bISBN, bGenre, bReviewer, bDate, bRating){
     this.title = bTitle;
     this.year = bYear;
     this.lastName = bLastName;
@@ -8,13 +8,25 @@ let Book = function (bTitle, bYear, bLastName, bFirstName, bISBN, bGenre){
     this.libraryCount = libraryArray.length + 1;
     this.ISBN = bISBN;
     this.genre = bGenre;
+    this.reviewer = bReviewer;
+    this.date = bDate;
+    this.rating = bRating;
+
+    //Rating Catalog
+    this.newReview = [new Review(bDate, bTitle, bGenre, bReviewer, bRating)];
 }
 
-// libraryArray.push(new Book("book1", 2012, "floop", "droop", 1925320, 'adventure'));
+let Review = function(bDate, bTitle, bGenre, bReviewer, bRating){
+    this.date = bDate;
+    this.title = bTitle;
+    this.genre = bGenre;
+    this.reviewer = bReviewer;
+    this.rating = bRating;
+}
+
+libraryArray.push(new Book("book1", 2012, "floop", "droop", 1925320, 'adventure', 'John Dempsey', '04/13/2015', '5'));
 
 let currentGenre = "noneSelected";
-
-console.log(libraryArray);
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -22,18 +34,23 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("ulBookList").innerHTML = libraryArray;
         let tempGenre = document.getElementById("select-genre");
         let tempGenre2 = tempGenre.options[tempGenre.selectedIndex].text;
+        let tempRating = document.getElementById("rating");
+        let tempRating2 = tempRating.options[tempRating.selectedIndex].text;
         libraryArray.push(new Book  (   document.getElementById("title").value,
                                         document.getElementById("year").value,
                                         document.getElementById("lastName").value,
                                         document.getElementById("firstName").value,
                                         document.getElementById("ISBN").value,
-                                        tempGenre2
+                                        tempGenre2,
+                                        document.getElementById("reviewer").value,
+                                        document.getElementById("date").value,
+                                        tempRating2,
+
                                     ));
     console.log("add Book");
     console.log(libraryArray);
     updateList();
     clearForm();
-    // Reset();
     });
 
     function clearForm(){
@@ -42,24 +59,15 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("lastName").value = "";
         document.getElementById("firstName").value = "";
         document.getElementById("ISBN").value = "";
-        // document.getElementById("select-genre").selectedIndex = 0;
-        document.getElementById("select-genre").value = "";
+        document.getElementById("select-genre").selectedIndex = 0;
+        document.getElementById("reviewer").value = "";
+        document.getElementById("date").value = "";
+        document.getElementById("rating").selectedIndex = 0;
+
     }
 
-    // function Reset(){
-    //     var dropDown = document.getElementById("select-genre");
-    //     dropDown.selectedIndex = 0;
-    // }
-
-    // let array = [a, b, c, d];
-    // array = [];
-
-    console.log("clearLibrary pre-click");
     document.getElementById("clearLibrary").addEventListener("click", function(){
-        let tempulList = document.getElementById("ulBookList");
-        console.log("clearLibrary clicked");
-        tempulList.innerHTML = "";
-        return libraryArray = [];
+        libraryArray = [];
     });
 
     //new method of for-loop known as the for-of loop
@@ -75,6 +83,9 @@ document.addEventListener("DOMContentLoaded", function(){
                             <li>first name: ${element.firstName}</li>
                             <li>isbn: ${element.ISBN}</li>
                             <li>genre: ${element.genre}</li>
+                            <li>reviewer: ${element.reviewer}</li>
+                            <li>date: ${element.date}</li>
+                            <li>rating: ${element.rating}</li>
                             <br>
                         `;
         }
@@ -92,5 +103,11 @@ document.addEventListener("DOMContentLoaded", function(){
         libraryArray.sort(dynamicSort("select-genre"));
         document.location.href = "index2.html#listAll";
     });
+
+    // document.getElementById("sortRating").addEventListener("click", function(){
+    //     console.log("sort by rating");
+    //     libraryArray.sort(dynamicSort("rating"));
+    //     document.location.href = "index2.html#listAll";
+    // });
 
 });
