@@ -54,6 +54,10 @@ document.addEventListener("DOMContentLoaded", function(){
     clearForm();
     });
 
+    // I need help clearing the two lines that use the dropdown... this means using the .selectedIndex property
+    // here is a site that I used, but it didn't end up working out:
+    // https://bit.ly/3ajnwWx
+
     function clearForm(){
         document.getElementById("title").value = "";
         document.getElementById("year").value = "";
@@ -61,10 +65,10 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("firstName").value = "";
         document.getElementById("ISBN").value = "";
         document.getElementById("select-genre").selectedIndex = 0;
+        // document.getElementById("select-genre").value = "fiction";
         document.getElementById("reviewer").value = "";
         document.getElementById("date").value = "";
         document.getElementById("rating").selectedIndex = 0;
-
     }
 
     document.getElementById("clearLibrary").addEventListener("click", function(){
