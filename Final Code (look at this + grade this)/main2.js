@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     document.getElementById("addtoList").addEventListener("click", function(){
         document.getElementById("ulBookList").innerHTML = libraryArray;
+        document.getElementById("ulBookRemove").innerHTML = libraryArray;
         let tempGenre = document.getElementById("select-genre");
         let tempGenre2 = tempGenre.options[tempGenre.selectedIndex].text;
         let tempRating = document.getElementById("rating");
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
                                         tempRating2,
 
                                     ));
+        
     console.log("add Book");
     console.log(libraryArray);
     updateList();
@@ -59,16 +61,21 @@ document.addEventListener("DOMContentLoaded", function(){
     // https://bit.ly/3ajnwWx
 
     function clearForm(){
+        let genreSelect = document.getElementById("select-genre")
+        genreSelect.options[genreSelect.selectedIndex].value = 'pick';
+        // genreSelect.options[genreSelect.selectedIndex].text = " -- select a genre -- ";
+        $("#select-genre").selectmenu('refresh', true); 
+
         document.getElementById("title").value = "";
         document.getElementById("year").value = "";
         document.getElementById("lastName").value = "";
         document.getElementById("firstName").value = "";
         document.getElementById("ISBN").value = "";
-        document.getElementById("select-genre").selectedIndex = 0;
+        // document.getElementById("select-genre").selectedIndex = 0;
         // document.getElementById("select-genre").value = "fiction";
         document.getElementById("reviewer").value = "";
         document.getElementById("date").value = "";
-        document.getElementById("rating").selectedIndex = 0;
+        document.getElementById("rating").selectedIndex = 0;    
     }
 
     document.getElementById("clearLibrary").addEventListener("click", function(){
@@ -78,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function(){
     //new method of for-loop known as the for-of loop
     function updateList(){
         let tempulList = document.getElementById("ulBookList");
+        let tempulRemove = document.getElementById("ulBookRemove");
         let fullList = "";
         for (let element of libraryArray) {
             fullList += `   
@@ -100,7 +108,60 @@ document.addEventListener("DOMContentLoaded", function(){
             //             `;
         }
         tempulList.innerHTML = fullList;
+        tempulRemove.innerHTML = fullList;
     }
+
+    // function deleteMovie(which) {
+    //     console.log(which);
+    //     let arrayPointer = GetArrayPointer(which);
+    //     movieArray.splice(arrayPointer, 1);  // remove 1 element at index 
+    // }
+
+    // document.getElementById("delete").addEventListener("click", function () {
+    //     let localParm = localStorage.getItem('parm');  // get the unique key back from the dictionairy
+    //     deleteMovie(localParm);
+    //     createList();  // recreate li list after removing one
+    //     document.location.href = "index.html#ListAll";  // go back to movie list 
+    // });
+
+
+    // function dynamicSort(property){
+    //     var sortOrder = 1;
+    //     for (let element of libraryArray) {
+
+    //         if(property[0] === "-"){
+    //             sortOrder = -1;
+    //             property = property.substr(1);
+    //         }
+
+    //         return function(a,b){
+    //             if (sortOrder == -1) return b[property].localeCompare(a[property]);
+    //             else return a[property].localeCompare(b[property]);;
+    //         }
+
+    //     }
+    // }
+
+    // document.getElementById("sortTile").addEventListener("click", function(){
+    //     // libraryArray.sort(sortTitleFunction);
+    //     movieArray.sort(dynamicSort("title"));
+    //     var sortTitleList = [];
+    //     document.location.href = "index2.html#listAll";
+    // });    
+
+    // function sortTitleFunction(a, b){
+    //     for (let element of libraryArray){
+    //         if (a.genre.toLowerCase.substring(0,1)() < b.genre.toLowerCase()) return -1;
+    //         if (a.genre.toLowerCase() > b.genre.toLowerCase()) return +1;
+    //         return 0;
+    //     }
+
+
+
+    // }
+
+
+
 
         // page before show code *************************************************************************
         $(document).on("pagebeforeshow", "#listAll", function (event) {   // have to use jQuery 
@@ -145,6 +206,9 @@ document.addEventListener("DOMContentLoaded", function(){
         // clear prior data
         var theList = document.getElementById("ulBookList");
         theList.innerHTML = "";
+
+        var theRemove = document.getElementById("ulBookRemove");
+        theRemove.innerHTML = "";
     
      
     

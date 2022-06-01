@@ -108,9 +108,9 @@
                         <!-- Prompts the User to Lookup the Genre of the Book using Google Books as a resource -->
                         <!-- <label for="select-genre">Select the Book's Genre using <a href="https://books.google.com/" target="_blank">Google Books</a></label> -->
                         Select the Book's Genre using <a href="https://books.google.com/" target="_blank">ISBN search</a>
-                        <select id="select-genre">
+                        <select id="select-genre" data-native-menu="false">
                             <!-- A non-clickable value in the dropdown field used as a temporary placeholder-->
-                            <option disabled selected value> -- select a genre -- </option>
+                            <option value="pick" disabled selected value> -- select a genre -- </option>
                             <option value="adventure">Adventure</option>
                             <option value="crimeThriller">Crime/Thriller</option>
                             <option value="childrens">Childrens</option>
@@ -259,6 +259,14 @@
                     <h1>Remove a Book</h1>
                     <!-- Paragraph Text informing the user what this page is intended to be used for and simple directions -->
                     <p>This page will allow the user to remove a book from the library Array. This page will continue to use the library Array, and this page will also have a button to clear the entire list of Books in the <strong>Library Array</strong> (uses library array data).</p>
+                    <!-- Creates an empty list which will eventually store all the Book objects from the Library Array -->
+                    <div id="divBookRemove">
+                        <ul id="ulBookRemove">
+                            
+                        </ul>    
+                    </div>
+                <!-- A clickable button located below the list of libraryArray books which allows the user to sort the array by Genre -->
+                <input type="button" value="removeBook" id="removeBook" data-inline="true" />
                 </div>
             </div>
     
