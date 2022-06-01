@@ -162,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-
         // page before show code *************************************************************************
         $(document).on("pagebeforeshow", "#listAll", function (event) {   // have to use jQuery 
             createList();
